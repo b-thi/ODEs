@@ -8,7 +8,7 @@ library(dplyr)
 # x Values
 x = seq(0, 7, 0.01)
 
-# Defining ODE
+# Solution function for ODE
 y = function(y_o) {return(3 + (y_o - 3)*exp(-x/2))}
 
 # Creating data frame
