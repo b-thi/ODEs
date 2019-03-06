@@ -43,11 +43,11 @@ comp_df %>%
 
 # Defining ODE again
 ode_rk4 <- function(t, y, parms){
-  dx = (a)*(b - y)
-  return(list(dx))
+  dydx = (a)*(b - y)
+  return(list(dydx))
 }
 
-# Defining various parameters
+# Defining parameters
 x = seq(0, 7, 0.01)
 a = 1/2
 b = 3
