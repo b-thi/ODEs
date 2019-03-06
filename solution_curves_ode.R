@@ -3,6 +3,7 @@
 # libraries
 library(reshape)
 library(ggplot2)
+library(dplyr)
 
 # x Values
 x = seq(0, 7, 0.01)
@@ -15,7 +16,8 @@ solution_curves = data.frame(cbind(x, apply(as.matrix(0:7), 1, FUN = y)))
 reshaped_solutions <- melt(solution_curves ,  id.vars = 'x')
 
 # Plotting
-ggplot(reshaped_solutions, aes(x, value)) + 
+reshaped_solutions %>% 
+  ggplot(aes(x, value)) + 
   geom_line(aes(colour = variable)) + 
   ggtitle("Solution Curves for:\n dy/dx + y/2 = 3/2") + 
   theme_bw() +
