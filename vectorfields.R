@@ -25,9 +25,6 @@ combo_values %>%
                arrow = arrow(length = unit(0.2,"cm")),
                size = 1)
 
-
-combo_values$x + combo_values$ODEvalue
-
 # Plotting in another way
 xx <- c(-4, 4)
 yy <- c(-4, 4)

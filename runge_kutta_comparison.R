@@ -7,6 +7,7 @@
 # Libraries
 library(rmutil)
 library(deSolve)
+library(reshape)
 
 # Defining ODE
 ode <- function(x, y){
@@ -18,6 +19,12 @@ y_initial <-  2
 
 # x values
 x = seq(0, 7, 0.01)
+
+# Solution function for ODE
+y = function(y_o) {return(3 + (y_o - 3)*exp(-x/2))}
+
+# Creating data frame
+solution_curves = data.frame(cbind(x, apply(as.matrix(0:7), 1, FUN = y)))
 
 # Running runge-kutta
 runge_solution <- runge.kutta(ode, y_initial, x)
@@ -55,7 +62,7 @@ parms = c(a = a, b = b)
 y_initial = c(y_initial = 2)
 
 # Running from deSolve package
-runge_solution_rk4 <- rk4(y_initial, x, ode2, parms)
+runge_solution_rk4 <- rk4(y_initial, x, ode_rk4, parms)
 
 # Creating data frame
 rk4_df <- melt(data.frame(x = x, 
