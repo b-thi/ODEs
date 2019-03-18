@@ -21,7 +21,7 @@ phase_data %>%
   ggplot(aes(x = y, y = dy)) + 
   geom_line() +
   theme_bw() +
-  labs(x = "y", y = "dy/dt", title = "Phase Portrait for Logistic Growth") +
+  labs(x = "y", y = bquote(frac(dy, dt)), title = "Phase Portrait for Logistic Growth") +
   theme(plot.title = element_text(hjust = 0.5)) +
   geom_hline(yintercept = 0, color = "Blue") +
   geom_segment(aes(x = y[which.max(dy)],

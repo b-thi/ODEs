@@ -4,6 +4,7 @@
 library(tidyverse)
 library(grid)
 library(pracma)
+library(deSolve)
 
 # Defining ODE; dy/dx = x - y
 ode <- function(x, y){
@@ -29,7 +30,7 @@ combo_values %>%
 xx <- c(-4, 4)
 yy <- c(-4, 4)
 vectorfield(ode, xx, yy, scale = 0.1, col = "blue")
-title(main = "Vecto Field for Example ODE")
+title(main = "Vector Field for Example ODE")
 
 # Plotting solutions
 for (xs in seq(-4, 4, by = 0.25)) {
