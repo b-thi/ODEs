@@ -23,7 +23,7 @@ e_df %>%
   ggplot(aes(x = x, y = y)) + 
   geom_line(size = 1.25) + 
   geom_segment(data = iter1, 
-            aes(x = 0, y = 0, xend = x, yend = y_1), 
+            aes(x = 0, y = 1, xend = x, yend = y_1), 
             color = "blue",
             size = 1.5) +
   geom_segment(data = iter2, 
