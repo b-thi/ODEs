@@ -34,6 +34,8 @@ e_df %>%
                aes(x = 2, y = y_2, xend = x, yend = y_3), 
                color = "green",
                size = 1.5) +
-  ggtitle("An Application of Euler's Method")
-  theme_bw()
+  ggtitle("An Application of Euler's Method") +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5))
+  
 
